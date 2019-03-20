@@ -1,0 +1,101 @@
+@import './Styles/variables.scss';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: $primary-color;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.pull-right {
+  margin-right: 20%;
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: calc(10px + 2vmin) !important;
+}
+
+.App-link {
+  color:  $secondary-color;
+}
+
+.App-intro {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: $table-width;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: $button-background !important;
+  border: 1px solid #ccc;
+
+  &:hover {
+    background: $button-hover !important;
+  }
+}
+
+.drink-selection {
+  float: left;
+  margin-left: 20px;
+  padding-right: 20px;
+  // border-right: 1px solid #ccc;
+}
+
+.drink-img {
+  width: $image-width;
+  height: $image-height;
+  float:left;
+  border-radius: 5px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.drink {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  width: $table-width !important;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: calc(10px + 2vmin);
+}
+
+input[type=text] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.NavbarToggler {
+  float: right;
+}
