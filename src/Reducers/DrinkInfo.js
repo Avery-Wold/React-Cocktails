@@ -9,7 +9,9 @@ export const DRINK_INFO_UPDATE_MEASURE1_NAME = "DRINK_INFO_UPDATE_MEASURE1_NAME"
 export const DRINK_INFO_UPDATE_MEASURE2_NAME = "DRINK_INFO_UPDATE_MEASURE2_NAME";
 export const DRINK_INFO_UPDATE_MEASURE3_NAME = "DRINK_INFO_UPDATE_MEASURE3_NAME";
 export const DRINK_INFO_IS_FAVE = "DRINK_INFO_IS_FAVE";
-
+export const DRINK_INFO_DRINKS = "DRINK_INFO_DRINKS";
+export const DRINK_INFO_SPIRIT = "DRINK_INFO_SPIRIT";
+export const DRINK_LIST = "DRINK_LIST";
 
 const DrinkInfo = (state={}, action) => {
     switch(action.type){
@@ -34,7 +36,13 @@ const DrinkInfo = (state={}, action) => {
         case DRINK_INFO_UPDATE_MEASURE3_NAME:
             return {...state, measure3: action.payload }
         case DRINK_INFO_IS_FAVE:
-            return{...state, isFave: action.payload}    
+            return {...state, isFave: action.payload}
+        case DRINK_INFO_DRINKS:
+            return {...state, drinks: action.payload} 
+        case DRINK_INFO_SPIRIT:
+            return {...state, spirit: action.payload} 
+        case DRINK_LIST:
+            return {...state, isList: action.payload}  
         default:
             return state;
     }

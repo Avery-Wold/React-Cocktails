@@ -6,12 +6,10 @@ import { connect } from 'react-redux';
 
 class Random extends Component {
     constructor(props) {
-        super(props);
-        
-        this.GetRandomCocktail = this.GetRandomCocktail.bind(this);
+        super(props);        
     }
 
-    GetRandomCocktail(e) {
+    GetRandomCocktail = (e) => {
         e.preventDefault();
         const {dispatch} = this.props;
         dispatch((getRandom()));    

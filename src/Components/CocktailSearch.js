@@ -7,20 +7,18 @@ import CocktailInput from './CocktailInput';
 
 class CocktailSearch extends Component {
     constructor(props) {
-        super(props);
-        
-        this.getCocktail = this.getCocktail.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        super(props);        
     }
 
-    getCocktail(e) {
+    getCocktail = (e) => {
         e.preventDefault();    
         const {dispatch} = this.props;
         if (this.props.drink !== ""){
-          dispatch((getDrink(this.props.drink))); 
+            dispatch((getDrink(this.props.drink))); 
         }
         else {
-          alert("Please enter a drink name");
+            // add validation
+            alert("Please enter a drink name");
         }
     }
     

@@ -10,6 +10,9 @@ export default {
         measure1:"",
         measure2:"",
         measure3:"",
-        isFave: false
+        isFave: false,
+        isList: false,
+        spirit:"",
+        drinks: []
     }
 }

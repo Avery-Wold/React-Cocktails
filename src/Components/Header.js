@@ -10,11 +10,9 @@ export default class Example extends React.Component {
     this.state = {
       collapsed: true
     };
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
 
-  toggleNavbar() {
+  toggleNavbar = () => {
     this.setState(state => ({
       collapsed: !this.state.collapsed
     }));
@@ -26,7 +24,7 @@ export default class Example extends React.Component {
         <Navbar >
           <NavbarBrand href="/" className="title">Making Cocktails With Avery</NavbarBrand>
           <div className="pull-right">
-          <NavbarToggler onClick={this.toggleNavbar} className="navbar-collapse" pullRight/>
+          <NavbarToggler onClick={this.toggleNavbar} className="navbar-collapse"/>
           <Collapse isOpen={!this.state.collapsed} >
             <Nav navbar>
               {/* <NavItem>
