@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../App.scss';
 import { Drink } from './Drink';
-import { updateSpirit, getSpirit } from '../Actions/DrinkInfo';
+import { getSpirit } from '../Actions/DrinkInfo';
+import { updateSpirit } from '../Actions/UpdateInfo';
 import { connect } from 'react-redux';
 import SpiritInput from './SpiritInput';
 

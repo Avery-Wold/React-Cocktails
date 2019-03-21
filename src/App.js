@@ -7,11 +7,12 @@ import Header from './Components/Header';
 import Random from './Components/Random';
 import CocktailSearch from './Components/CocktailSearch';
 import SpiritSearch from './Components/SpiritSearch';
-import { DrinkList } from './Components/DrinkList';
+import DrinkList from './Components/DrinkList';
 
 class App extends Component {
   constructor(props) {
     super(props);
+  
   }
 
   getAveryFave = (e) => {
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   render() {
-    const { drink, spirit, drinks, glass, instructions, ingredient1, ingredient2, ingredient3, picture, measure1, measure2, measure3, isFave, isList } = this.props;
+    const { spirit, drinks, isFave, isList } = this.props;
 
     if (!isFave && !isList) {
       return (
@@ -57,10 +58,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <Drink drink={drink} glass={glass} instructions={instructions} ingredient1={ingredient1}
-            ingredient2={ingredient2} ingredient3={ingredient3} picture={picture}
-            measure1={measure1} measure2={measure2} measure3={measure3}
-          />
+          <Drink  drinks={drinks}/>
         </div>
       );
     }
@@ -78,16 +76,6 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    drink: state.DrinkInfo.drink,
-    glass: state.DrinkInfo.glass,
-    instructions: state.DrinkInfo.instructions,
-    ingredient1: state.DrinkInfo.ingredient1,
-    ingredient2: state.DrinkInfo.ingredient2,
-    ingredient3: state.DrinkInfo.ingredient3,
-    picture: state.DrinkInfo.picture,
-    measure1: state.DrinkInfo.measure1,
-    measure2: state.DrinkInfo.measure2,
-    measure3: state.DrinkInfo.measure3,
     isFave: state.DrinkInfo.isFave,
     isList: state.DrinkInfo.isList,
     drinks: state.DrinkInfo.drinks,

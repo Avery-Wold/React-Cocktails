@@ -33,16 +33,6 @@ class Random extends Component {
   
 const mapStateToProps = (state) => {
     return {
-        drink: state.DrinkInfo.drink,
-        glass: state.DrinkInfo.glass,
-        instructions: state.DrinkInfo.instructions,
-        ingredient1: state.DrinkInfo.ingredient1,
-        ingredient2: state.DrinkInfo.ingredient2,
-        ingredient3: state.DrinkInfo.ingredient3,
-        picture: state.DrinkInfo.picture,
-        measure1: state.DrinkInfo.measure1,
-        measure2: state.DrinkInfo.measure2,
-        measure3: state.DrinkInfo.measure3,
         isFave: state.DrinkInfo.isFave
     }
 }

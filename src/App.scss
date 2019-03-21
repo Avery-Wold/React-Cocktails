@@ -120,26 +120,34 @@ input[type=text] {
 }
 
 .drink-list-div {
-  display: block;
+  // display: block;
   padding: 20px;
   height: 10%;
-  // float: left;
-  width: 50%;
+  float: left;
+  width: 33%;
+  box-sizing: inherit;
+}
+
+.container {
+  border: 1px solid #ccc;
+  box-sizing: inherit;
+  padding-bottom: 20px;
 }
 
 li {
   padding: 10px;
   margin-right: 10px;
-  padding-left: 20px;
+  margin-left: 10px;
   display: inline-block;
   font-size: 20px;
+  text-align: center;
 }
 
 .drink-list {
-  background: red;
   width: $image-width;
   height: $image-height;
   float:left;
   border-radius: 5px;
   margin-top: 10px;
+  margin-left: 20px;
 }
