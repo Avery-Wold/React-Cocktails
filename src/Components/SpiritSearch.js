@@ -52,9 +52,7 @@ class SpiritSearch extends Component {
   
 const mapStateToProps = (state) => {
     return {
-        drink: state.DrinkInfo.drink,
         spirit: state.DrinkInfo.spirit,
-        picture: state.DrinkInfo.picture,
         isFave: state.DrinkInfo.isFave,
         drinks: state.DrinkInfo.drinks
     }

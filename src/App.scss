@@ -27,6 +27,7 @@
   margin-top: auto;
   margin-bottom: auto;
   font-size: calc(10px + 2vmin) !important;
+  text-align: center !important;
 }
 
 .App-link {
@@ -59,10 +60,34 @@ p {
   }
 }
 
+.btn-fave {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: $button-background !important;
+  border: 1px solid #ccc;
+  position: relative;
+  left: -10px;
+
+  &:hover {
+    background: $button-hover !important;
+  }
+}
+
+.select-drink {
+  width: 100%;
+  float: left;
+  box-sizing: inherit;
+  position: relative;
+  bottom: 190px;
+}
+
 .drink-selection {
   float: left;
   margin-left: 20px;
-  padding-right: 20px;
+  width: 31%;
 }
 
 .drink-img {
@@ -120,7 +145,6 @@ input[type=text] {
 }
 
 .drink-list-div {
-  // display: block;
   padding: 20px;
   height: 10%;
   float: left;

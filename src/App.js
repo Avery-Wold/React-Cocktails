@@ -40,16 +40,15 @@ class App extends Component {
           </div>
           <img src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg" className="drink-home2" alt="cocktail" />
           <button
-            className="btn"
+            className="btn-fave"
             onClick={e => this.getAveryFave(e)}>
             Avery's favorite
           </button>
-          <br />
-          <br />
-          <br />
-          <CocktailSearch />
-          <SpiritSearch />
-          <Random />
+          <div className="select-drink">
+            <CocktailSearch />
+            <Random />
+            <SpiritSearch />
+          </div>
         </div>
       );
     }
