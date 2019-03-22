@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
@@ -24,10 +25,9 @@
 }
 
 .title {
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: calc(10px + 2vmin) !important;
-  text-align: center !important;
+  font-size: calc(20px + 2vmin);
+  justify-content: center;
+
 }
 
 .App-link {
@@ -174,4 +174,12 @@ li {
   border-radius: 5px;
   margin-top: 10px;
   margin-left: 20px;
+}
+
+.table h1 {
+  font-size: calc(30px + 2vmin);
+}
+
+.form-errors {
+  color: $form-error;
 }

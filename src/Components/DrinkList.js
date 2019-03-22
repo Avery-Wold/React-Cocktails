@@ -6,9 +6,6 @@ import { Drink } from './Drink';
 import { connect } from 'react-redux';
 
 class DrinkList extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     getCocktail = (e) => {
         e.preventDefault(); 

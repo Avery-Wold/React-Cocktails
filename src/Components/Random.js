@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import '../App.scss';
-import { Drink } from './Drink';
 import { getRandom } from '../Actions/DrinkInfo';
 import { connect } from 'react-redux';
 
 class Random extends Component {
-    constructor(props) {
-        super(props);        
-    }
-
     GetRandomCocktail = (e) => {
         e.preventDefault();
         const {dispatch} = this.props;

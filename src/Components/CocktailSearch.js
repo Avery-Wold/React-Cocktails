@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
 import '../App.scss';
-import { Drink } from './Drink';
 import { updateDrinkName } from '../Actions/UpdateInfo';
 import { getDrink } from '../Actions/DrinkInfo';
 import { connect } from 'react-redux';
 import CocktailInput from './CocktailInput';
+import FormErrors from './FormErrors';
 
 class CocktailSearch extends Component {
     constructor(props) {
-        super(props);        
+        super(props); 
+        this.state = {
+            formErrors: {
+              validCocktail: ''
+            },
+            isCocktailValid: false,
+            showFormErrors: false
+        }       
     }
 
     getCocktail = (e) => {
-        e.preventDefault();    
+        e.preventDefault();
+        let newFormErrors = this.state.formErrors;
+        let validCocktail = this.state.isCocktailValid;    
         const {dispatch} = this.props;
         if (this.props.drink !== ""){
             dispatch((getDrink(this.props.drink))); 
         }
         else {
-            // add validation
-            alert("Please enter a drink name");
+            newFormErrors.validCocktail = 'Please enter a valid drink name';
+            this.setState({formErrors: newFormErrors, showFormErrors: true, isCocktailValid: validCocktail});
         }
     }
     
     handleChange = (event) => {
         event.preventDefault();
-        // this.setState({showFormErrors:false});
+        this.setState({showFormErrors: false});
         var cocktail = event.target.value;
         var searchString = cocktail.replace(/\s/g, "+");
         console.log(searchString);
@@ -47,6 +56,7 @@ class CocktailSearch extends Component {
                     Get Drink
                 </button>
                 </p>
+                {(!this.state.isCocktailValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
             </div>
         )
     }

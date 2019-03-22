@@ -12,7 +12,12 @@ import DrinkList from './Components/DrinkList';
 class App extends Component {
   constructor(props) {
     super(props);
-  
+    this.state = {
+      formErrors: {
+        validSpirit: '',
+        validCocktail: ''
+      },
+    }
   }
 
   getAveryFave = (e) => {

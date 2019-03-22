@@ -11,7 +11,7 @@ export class Drink extends Component {
                             <img src={drinks.strDrinkThumb} className="drink-img" alt="cocktail"/>
                             <div className="table">
                                 <h1>
-                                    {drinks.strDrink}
+                                    <strong>{drinks.strDrink}</strong>
                                 </h1>
                                 <h2>
                                     What you'll need:

@@ -1,31 +1,41 @@
 import React, { Component } from 'react';
 import '../App.scss';
-import { Drink } from './Drink';
 import { getSpirit } from '../Actions/DrinkInfo';
 import { updateSpirit } from '../Actions/UpdateInfo';
 import { connect } from 'react-redux';
 import SpiritInput from './SpiritInput';
+import FormErrors from './FormErrors';
 
 class SpiritSearch extends Component {
     constructor(props) {
-        super(props);        
+        super(props);   
+        this.state = {
+            formErrors: {
+              validSpirit: ''
+            },
+            isSpiritValid: false,
+            showFormErrors: false
+        }     
     }
 
     getSpiritList = (e) => {
         e.preventDefault();    
-        const {dispatch} = this.props;        
-        if (this.props.spirit !== "" || this.props.spirit === undefined){
+        let newFormErrors = this.state.formErrors;
+        let validSpirit = this.state.isSpiritValid;
+        const {dispatch} = this.props;    
+        console.log("is drinks valid: ", this.props.drinks);    
+        if (this.props.spirit !== "" || this.props.drinks !== undefined){
             dispatch((getSpirit(this.props.spirit))); 
         }
         else {
-            // add validation
-            alert("Please enter a spirit");
+            newFormErrors.validSpirit = 'Please enter a valid spirit name';
+            this.setState({formErrors: newFormErrors, showFormErrors: true, isSpiritValid: validSpirit});
         }
     }
     
     handleChange = (e) => {
         e.preventDefault();
-        // this.setState({showFormErrors:false});
+        this.setState({showFormErrors: false});
         var spirit = e.target.value;
         const { dispatch } = this.props;
         dispatch(updateSpirit(spirit));
@@ -45,6 +55,7 @@ class SpiritSearch extends Component {
                     Get Drinks
                 </button>
                 </p>
+                {(!this.state.isSpiritValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
             </div>
         )
     }
