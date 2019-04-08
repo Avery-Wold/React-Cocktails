@@ -11,6 +11,7 @@ class DrinkList extends Component {
         e.preventDefault(); 
         const {dispatch} = this.props;
         dispatch((getDrink(e.target.value))); 
+
     }
 
     render() {
@@ -24,7 +25,7 @@ class DrinkList extends Component {
               </div>
             );
         }
-        else{
+        if(drinks) {
             return(
                 <div>
                     <h1>{this.props.spirit} drinks</h1>

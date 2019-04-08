@@ -22,7 +22,7 @@ export default class Example extends Component {
     return (
       <div className="navbar navbar-expand-md bg-dark navbar-dark">
         <Navbar >
-          <NavbarBrand href="/" className="title">Making Cocktails With Avery</NavbarBrand>
+          <NavbarBrand href="/" className="title" drinks="">Making Cocktails With Avery</NavbarBrand>
           <div className="pull-right">
           <NavbarToggler onClick={this.toggleNavbar} className="navbar-collapse"/>
           <Collapse isOpen={!this.state.collapsed} >

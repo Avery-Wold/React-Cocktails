@@ -23,8 +23,7 @@ class SpiritSearch extends Component {
         let newFormErrors = this.state.formErrors;
         let validSpirit = this.state.isSpiritValid;
         const {dispatch} = this.props;    
-        console.log("is drinks valid: ", this.props.drinks);    
-        if (this.props.spirit !== "" || this.props.drinks !== undefined){
+        if (this.props.spirit !== ""){
             dispatch((getSpirit(this.props.spirit))); 
         }
         else {

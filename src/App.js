@@ -28,7 +28,6 @@ class App extends Component {
 
   render() {
     const { spirit, drinks, isFave, isList } = this.props;
-
     if (!isFave && !isList) {
       return (
         <div className="App">

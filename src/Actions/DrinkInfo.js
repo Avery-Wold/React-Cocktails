@@ -59,9 +59,17 @@ const fetchData = (url) => {
                 }
             ))
             .then((newData) => {
-                dispatch(updateIsFave(true));
-                dispatch(updateDrinks(newData.drinks));
-                dispatch(dataIsSuccessful(newData));
+                console.log(newData.drinks);
+                if(newData.drinks !== null){
+                    dispatch(updateIsFave(true));
+                    dispatch(updateDrinks(newData.drinks));
+                    dispatch(dataIsSuccessful(newData));
+                }
+                else {
+                    dispatch(dataHasErrors());
+                    alert("Oops, invalid entry");
+                    window.location.reload();
+                }
             })
             .catch(() => {
                 dispatch(dataHasErrors());
@@ -79,9 +87,16 @@ const fetchSpiritData = (url) => {
                 }
             ))
             .then((newData) => {
-                dispatch(updateIsList(true));
-                dispatch(updateDrinks(newData.drinks));
-                dispatch(dataIsSuccessful(newData));
+                if (newData.drinks !== undefined || newData.drinks){
+                    dispatch(updateIsList(true));
+                    dispatch(updateDrinks(newData.drinks));
+                    dispatch(dataIsSuccessful(newData));
+                }
+                else {
+                    dispatch(dataHasErrors());
+                    alert("Oops, invalid entry");
+                    window.location.reload();
+                }
             })
             .catch(() => {
                 dispatch(dataHasErrors());
