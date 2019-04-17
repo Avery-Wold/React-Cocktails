@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import CocktailInput from './CocktailInput';
 import FormErrors from './FormErrors';
 
-class CocktailSearch extends Component {
+export class CocktailSearch extends Component {
     constructor(props) {
         super(props); 
         this.state = {
